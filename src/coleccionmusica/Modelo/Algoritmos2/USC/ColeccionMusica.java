@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  *
- * @author Diego
+ * @author Juan Sebastian Bejarano y Carlos Augusto Hernandez
  */
 public class ColeccionMusica {
     
@@ -91,7 +91,29 @@ public class ColeccionMusica {
         }
         /* 3. determinar cuál genero tiene mayor cantidad de álbumes y devolver el nombre
         */
-        
+        if(cuantosSalsa>cuantosRock && cuantosSalsa>cuantosJazz){
+            if (cuantosSalsa>cuantosRock) {
+                nombreGenero="Salsa";
+            }
+            else{
+                nombreGenero="Rock";
+            } 
+        }
+        else if(cuantosEspiritual>cuantosJazz){
+            if (cuantosEspiritual>cuantosRock) {
+                nombreGenero="Espiritual";
+            }
+            else{
+                nombreGenero="Rock";
+            }
+        }
+        else if(cuantosJazz>cuantosRock){
+            nombreGenero="Jazz";
+        }
+        else{
+            nombreGenero="Rock";
+        }
+
                 
       return nombreGenero;  
     } 
