@@ -9,7 +9,7 @@ import java.util.*;
 
 /**
  *
- * @author Diego
+ * @author Juan Sebastian Bejarano y Carlos Augusto Hernandez
  */
 public class Artista {
     

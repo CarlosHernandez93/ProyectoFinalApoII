@@ -7,7 +7,7 @@ package ColeccionMusica.Modelo.Algoritmos2.USC;
 
 /**
  *
- * @author Diego
+ * @author Juan Sebastian Bejarano y Carlos Augusto Hernandez
  */
 public class Cancion {
     
@@ -37,6 +37,7 @@ public class Cancion {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+       
     }
 
     public int getDuracion() {

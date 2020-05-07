@@ -112,9 +112,7 @@ public class ColeccionMusica {
         }
         else{
             nombreGenero="Rock";
-        }
-
-                
+        }     
       return nombreGenero;  
     } 
     
