@@ -29,11 +29,13 @@ public class Album {
 
     public Album(String titulo, 
                  String genero, 
+                 int numCopias,
                  String imagen, 
                  int duracion, 
                  Fecha fechaLanzamiento) {
         this.titulo = titulo;
-        this.genero = genero;        
+        this.genero = genero;   
+        this.numCopias = numCopias;
         this.rutaImagen = imagen;
         this.duracion = duracion;
         this.fechaLanzamiento = fechaLanzamiento;

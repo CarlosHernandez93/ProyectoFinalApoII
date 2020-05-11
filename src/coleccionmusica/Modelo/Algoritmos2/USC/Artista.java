@@ -112,7 +112,7 @@ public class Artista {
         this.nombre = nombre;
     }
 
-    public boolean isEstaActivo() {
+    public boolean getEstaActivo() {
         return estaActivo;
     }
 

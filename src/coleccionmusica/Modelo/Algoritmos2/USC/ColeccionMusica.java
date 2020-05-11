@@ -32,8 +32,7 @@ public class ColeccionMusica {
     
     public ColeccionMusica()
     {
-        artistas = new ArrayList<Artista>();
-        //hola sebastian
+        artistas = new ArrayList<Artista>();      
     }
     
     public void agregarArtista(Artista nuevoArtista)
@@ -127,6 +126,9 @@ public class ColeccionMusica {
         /*
         Completar...
         */
+        for (int i = 0; i < 10; i++) {
+           
+        }
         return Resultado;
     }
     
@@ -215,9 +217,31 @@ public class ColeccionMusica {
                     Artista nuevoArtista = new Artista(nombreArtista, activo, fechaNac, fechaDebut);
                     artistas.add(nuevoArtista);
             }
+            for (int i = 0; i < artistas.size(); i++) {
+                System.out.println(artistas.get(i).getNombre());
+                System.out.println(artistas.get(i).getEstaActivo());
+                System.out.println(artistas.get(i).getFechaNacimiento());
+                System.out.println(artistas.get(i).getFechaDebut());
+                System.out.println("");
+            }
+            
+            //Lectura de los primeros albumes del primer artista
+            int numAlbum1 =  Integer.parseInt(br.readLine().trim());
+
+            for (int i = 0; i < numAlbum1; i++) {
+                //String linealbum1 = br.readLine().trim();
+                linea = br.readLine().trim();
+                String datosAlbum1[] = linea.split(",");
+                String nombreAlbum1 = datosAlbum1[0];
+                String generoAlbum1 = datosAlbum1[1];
+                int numCopias1;
+                String fecha1[] = datosAlbum1[4].trim().split("-");
+                Fecha fechaPublic1 = convertirFecha(fecha1);
+                Album nuevoAlbum1 = new Album();
+                artistas.get(0).agregarAlbum(nuevoAlbum1);
+            }
             
             br.close();
-            
             
         } catch (FileNotFoundException ex) {
             
@@ -234,7 +258,6 @@ public class ColeccionMusica {
         return laFecha;
     }
     
-
     /**
      * @param args the command line arguments
      */
