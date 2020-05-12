@@ -235,10 +235,8 @@ public class ColeccionMusica {
                 String nombreAlbum1 = datosAlbum1[0];
                 String generoAlbum1 = datosAlbum1[1];
                 int numCopias1;
-                String fecha1[] = datosAlbum1[4].trim().split("-");
-               // Fecha fechaPublic1 = convertirFecha(fecha1);
-               //holi
-               //holi mundo
+                String fecha1[] = datosAlbum1[5].trim().split("-");
+                Fecha fechaPublic1 = convertirFecha(fecha1);
                 Album nuevoAlbum1 = new Album();
                 artistas.get(0).agregarAlbum(nuevoAlbum1);
             }
