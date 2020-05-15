@@ -261,12 +261,12 @@ public class ColeccionMusica {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        ColeccionMusica miColeccion = new ColeccionMusica();         
-        miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
-        System.out.print("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
-        
-    }
+//     public static void main(String[] args) {
+//         //TODO code application logic here
+//        ColeccionMusica miColeccion = new ColeccionMusica();         
+//        miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
+//        System.out.print("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
+//        
+//    }
     
 }
