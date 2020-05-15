@@ -5,10 +5,76 @@
  */
 package coleccionmusica.UI.Algoritmos2.USC;
 
+import java.awt.*;
+import javax.swing.*;
 /**
  *
  * @author Juan Sebastian Bejarano y Carlos Augusto Hernandez
  */
-public class VentanaIncial {
+public class VentanaIncial extends JFrame{
+    
+    BtnAnteriorP1 btnAtras;
+    BtnSiguienteP1 btnSiguiente;
+    LogoArtista imgArtista;
+    EditP1 editor;
+    
+    int ancho, alto;
+    ImageIcon artista;
+    
+    public VentanaIncial()
+    {
+        ancho = 900;
+        alto = 600;
+        
+       
+        
+        setSize(ancho, alto);
+        setAlwaysOnTop(true);
+        
+        
+        setTitle("Tu Coleccion");
+        
+        setBackground(Color.BLACK);
+        
+         this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);        
+        setLayout(new BorderLayout());
+        
+       //logo artista
+        
+        btnAtras = new BtnAnteriorP1(this); //falta el this para hacer referencia a la ventana padre
+        btnSiguiente = new BtnSiguienteP1(this); // fata ""  "" "" a la ventana padre
+        editor = new EditP1(this);
+        imgArtista = new LogoArtista(this);
+        
+        add(btnAtras, BorderLayout.WEST);
+        add(btnSiguiente, BorderLayout.EAST);
+        add(editor, BorderLayout.SOUTH);
+        add(imgArtista, BorderLayout.CENTER);
+        
+        
+               
+        
+        
+        
+        
+        
+          
+        
+        
+    }
+    
+    
+    public static void main(String[] args)
+        {
+            
+            VentanaIncial miVentana = new VentanaIncial();
+            miVentana.setVisible(true);
+            
+        }
+
+    private void add(BtnAnteriorP1 btnAtras, String WEST) {
+      // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
