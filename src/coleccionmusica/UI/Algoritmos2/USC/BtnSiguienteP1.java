@@ -26,12 +26,19 @@ public class BtnSiguienteP1 extends JPanel implements ActionListener{
         /*separar espacios con JLabel vacios*/
         miVentanaPadre = p ;      
         
-        setLayout(new GridLayout(8,5));
+        setLayout(new GridLayout(15,4));
         
         setPreferredSize(new Dimension(200, 400));
         
         
         botonSig = new JButton("Siguiente");
+        add(new JLabel(" "));                
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));        
+        add(new JLabel(" "));       
+        add(new JLabel(" "));        
         add(botonSig);
         
     }

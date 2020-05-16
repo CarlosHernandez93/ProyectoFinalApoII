@@ -47,21 +47,13 @@ public class VentanaIncial extends JFrame{
         editor = new EditP1(this);
         imgArtista = new LogoArtista(this);
         
-        add(btnAtras, BorderLayout.WEST);
+        //add(btnAtras, BorderLayout.WEST);
         add(btnSiguiente, BorderLayout.EAST);
+        add(btnAtras, BorderLayout.WEST);
+        
         add(editor, BorderLayout.SOUTH);
         add(imgArtista, BorderLayout.CENTER);
-        
-        
-               
-        
-        
-        
-        
-        
-          
-        
-        
+       
     }
     
     
@@ -73,8 +65,6 @@ public class VentanaIncial extends JFrame{
             
         }
 
-    private void add(BtnAnteriorP1 btnAtras, String WEST) {
-      // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
 }

@@ -6,12 +6,14 @@
 package coleccionmusica.UI.Algoritmos2.USC;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.*;
 import javax.swing.*;
+import sun.util.locale.provider.AuxLocaleProviderAdapter;
 
 /**
  *
@@ -23,19 +25,34 @@ public class BtnAnteriorP1 extends JPanel implements ActionListener{
     VentanaIncial miVentanaPadre;
     JButton botonAnt;
     
+   
+    
     
     public BtnAnteriorP1(VentanaIncial p)
     {
         
+        
+        
         /*como hacer llamada en ventana padre ¿? */
         miVentanaPadre = p ;      
         
-        setLayout(new GridLayout(8,8));
+        setLayout(new GridLayout(15,5));
         
         setPreferredSize(new Dimension(200, 400));
         
         
         botonAnt = new JButton("Anterior");
+       
+        
+        
+        add(new JPanel());
+        add(new JPanel());
+        add(new JPanel());
+        add(new JPanel());
+        add(new JPanel());
+        add(new JPanel());
+        add(new JPanel());
+                
         add(botonAnt);
         
     }

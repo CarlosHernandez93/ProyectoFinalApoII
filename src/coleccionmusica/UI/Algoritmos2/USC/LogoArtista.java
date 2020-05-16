@@ -13,6 +13,8 @@ import javax.swing.JPanel;
  */
 public class LogoArtista extends JPanel {
     
+   
+    
     public LogoArtista()
     {
         
