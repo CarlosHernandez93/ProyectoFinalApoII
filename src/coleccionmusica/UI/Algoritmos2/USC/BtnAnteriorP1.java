@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package coleccionmusica.UI.Algoritmos2.USC;
 
 import java.awt.BorderLayout;
@@ -21,47 +17,39 @@ import sun.util.locale.provider.AuxLocaleProviderAdapter;
  */
 public class BtnAnteriorP1 extends JPanel implements ActionListener{
     
-    
     VentanaIncial miVentanaPadre;
     JButton botonAnt;
     
-   
-    
-    
     public BtnAnteriorP1(VentanaIncial p)
     {
-        
-        
         
         /*como hacer llamada en ventana padre ¿? */
         miVentanaPadre = p ;      
         
         setLayout(new GridLayout(15,5));
         
-        setPreferredSize(new Dimension(200, 400));
+        setPreferredSize(new Dimension(200, 300));
         
+         this.setBackground(Color.white);
         
         botonAnt = new JButton("Anterior");
-       
+        botonAnt.setToolTipText("Click para volver");
         
-        
-        add(new JPanel());
-        add(new JPanel());
-        add(new JPanel());
-        add(new JPanel());
-        add(new JPanel());
-        add(new JPanel());
-        add(new JPanel());
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
                 
         add(botonAnt);
         
     }
-
     
     public VentanaIncial getMiVentanaPadre() {
         return miVentanaPadre;
     }
-    
     
     public void setMiVentanaPadre(VentanaIncial miVentanaPadre) {
         this.miVentanaPadre = miVentanaPadre;

@@ -54,6 +54,14 @@ public class Artista {
         this.fechaDebut = new Fecha();
         albumes = new ArrayList<Album>();
     }
+
+    public ArrayList<Album> getAlbumes() {
+        return albumes;
+    }
+
+    public void setAlbumes(ArrayList<Album> albumes) {
+        this.albumes = albumes;
+    }
     
     public void agregarAlbum(Album nuevoAlbum)
     {
@@ -104,6 +112,18 @@ public class Artista {
         return elAlbum;
     }
 
+    //Metodo creado
+    public boolean EstimacionAlbum(String generoAlbum){
+        boolean validacion=false;
+        if(generoAlbum.equalsIgnoreCase(albumes.get(0).getGenero())){
+            validacion= true;
+        }
+        else{
+            validacion= false;
+        }
+        return validacion;
+    }
+    
     public String getNombre() {
         return nombre;
     }

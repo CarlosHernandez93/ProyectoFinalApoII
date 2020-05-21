@@ -132,17 +132,19 @@ public class ColeccionMusica {
         return Resultado;
     }
     
-    /**
+    /** ----- completado
      * 
      * @param pArtista: Nombre del artista
      * @return lista de álbumes que pertenecen al artista
      */
-    public ArrayList<Artista> albumesPorArtista(String pArtista)
+    public ArrayList<Album> albumesPorArtista(String pArtista)
     {
-       ArrayList<Artista> Resultado = new ArrayList<Artista>();
-        /*
-        Completar...
-        */
+       ArrayList<Album> Resultado = new ArrayList<Album>();
+        for (int i = 0; i < artistas.size(); i++) {
+            if (pArtista.equalsIgnoreCase(artistas.get(i).getNombre())) {
+                Resultado = artistas.get(i).getAlbumes();
+            }
+        }
         return Resultado;   
     }
     
@@ -189,7 +191,6 @@ public class ColeccionMusica {
         try {
             
             BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
-           
             String linea;
             /* Leer información de la colección de música: */
             linea = br.readLine().trim(); //"Diego Loaiza,2020-04-22"
@@ -211,7 +212,7 @@ public class ColeccionMusica {
                     String nombreArtista = datosArtista[0]; //"Mick Jagger"
                     boolean activo =  Boolean.valueOf(datosArtista[1].trim()); //true
                     String fechaNacArtista[] = datosArtista[2].trim().split("-"); //{"1943","07","26"}
-                    String fechaDebutArtista[] = datosArtista[3].trim().split("-"); //{"1964","12","07"}            
+                    String fechaDebutArtista[] = datosArtista[3].trim().split("-"); //{"1964","12","07"}
                     Fecha fechaNac = convertirFecha(fechaNacArtista);            
                     Fecha fechaDebut = convertirFecha(fechaDebutArtista);            
                     Artista nuevoArtista = new Artista(nombreArtista, activo, fechaNac, fechaDebut);
@@ -229,18 +230,78 @@ public class ColeccionMusica {
             int numAlbum1 =  Integer.parseInt(br.readLine().trim());
 
             for (int i = 0; i < numAlbum1; i++) {
-                //String linealbum1 = br.readLine().trim();
                 linea = br.readLine().trim();
                 String datosAlbum1[] = linea.split(",");
                 String nombreAlbum1 = datosAlbum1[0];
                 String generoAlbum1 = datosAlbum1[1];
-                int numCopias1;
+                int numCopias1 = Integer.parseInt(datosAlbum1[2]);
+                String rutaAlbum1 = datosAlbum1[3];
+                int duracionAlmbun1 = Integer.parseInt(datosAlbum1[4]); 
                 String fecha1[] = datosAlbum1[5].trim().split("-");
                 Fecha fechaPublic1 = convertirFecha(fecha1);
-                Album nuevoAlbum1 = new Album();
+                Album nuevoAlbum1 = new Album(nombreAlbum1, generoAlbum1, numCopias1, rutaAlbum1, duracionAlmbun1, fechaPublic1);
                 artistas.get(0).agregarAlbum(nuevoAlbum1);
             }
             
+            System.out.println(artistas.get(0).numAlbumes());
+           
+            //Lectura de los albumes para el segundo artista de la lista
+            int numAlbum2 =  Integer.parseInt(br.readLine().trim());
+
+            for (int i = 0; i < numAlbum2; i++) {
+                linea = br.readLine().trim();
+                String datosAlbum2[] = linea.split(",");
+                String nombreAlbum2 = datosAlbum2[0];
+                String generoAlbum2 = datosAlbum2[1];
+                int numCopias2 = Integer.parseInt(datosAlbum2[2]);
+                String rutaAlbum2 = datosAlbum2[3];
+                int duracionAlmbun2 = Integer.parseInt(datosAlbum2[4]); 
+                String fecha1[] = datosAlbum2[5].trim().split("-");
+                Fecha fechaPublic2 = convertirFecha(fecha1);
+                Album nuevoAlbum2 = new Album(nombreAlbum2, generoAlbum2, numCopias2, rutaAlbum2, duracionAlmbun2, fechaPublic2);
+                artistas.get(1).agregarAlbum(nuevoAlbum2);
+            }
+            
+            System.out.println(artistas.get(1).numAlbumes());
+            
+            //Lectura de los albumes para el tercer artista de la lista
+            int numAlbum3 =  Integer.parseInt(br.readLine().trim());
+
+            for (int i = 0; i < numAlbum3; i++) {
+                linea = br.readLine().trim();
+                String datosAlbum3[] = linea.split(",");
+                String nombreAlbum3 = datosAlbum3[0];
+                String generoAlbum3 = datosAlbum3[1];
+                int numCopias3 = Integer.parseInt(datosAlbum3[2]);
+                String rutaAlbum3 = datosAlbum3[3];
+                int duracionAlmbun3 = Integer.parseInt(datosAlbum3[4]); 
+                String fecha3[] = datosAlbum3[5].trim().split("-");
+                Fecha fechaPublic3 = convertirFecha(fecha3);
+                Album nuevoAlbum3 = new Album(nombreAlbum3, generoAlbum3, numCopias3, rutaAlbum3, duracionAlmbun3, fechaPublic3);
+                artistas.get(2).agregarAlbum(nuevoAlbum3);
+            }
+            
+            System.out.println(artistas.get(2).numAlbumes());
+           
+            //Lectura de los albumes para el cuarto artista de la lista
+            int numAlbum4 =  Integer.parseInt(br.readLine().trim());
+
+            for (int i = 0; i < numAlbum4; i++) {
+                linea = br.readLine().trim();
+                String datosAlbum4[] = linea.split(",");
+                String nombreAlbum4 = datosAlbum4[0];
+                String generoAlbum4 = datosAlbum4[1];
+                int numCopias4 = Integer.parseInt(datosAlbum4[2]);
+                String rutaAlbum4 = datosAlbum4[3];
+                int duracionAlmbun4 = Integer.parseInt(datosAlbum4[4]); 
+                String fecha4[] = datosAlbum4[5].trim().split("-");
+                Fecha fechaPublic4 = convertirFecha(fecha4);
+                Album nuevoAlbum4 = new Album(nombreAlbum4, generoAlbum4, numCopias4, rutaAlbum4, duracionAlmbun4, fechaPublic4);
+                artistas.get(3).agregarAlbum(nuevoAlbum4);
+            }
+            
+            System.out.println(artistas.get(3).numAlbumes());
+          
             br.close();
             
         } catch (FileNotFoundException ex) {
@@ -261,12 +322,14 @@ public class ColeccionMusica {
     /**
      * @param args the command line arguments
      */
-//     public static void main(String[] args) {
-//         //TODO code application logic here
-//        ColeccionMusica miColeccion = new ColeccionMusica();         
-//        miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
-//        System.out.print("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
-//        
-//    }
+    /*public static void main(String[] args) {
+          //TODO code application logic here
+          ColeccionMusica miColeccion = new ColeccionMusica();         
+          miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
+          System.out.println("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
+          System.out.println(miColeccion.albumesPorArtista("cheo feliciano"));
+          System.out.println(miColeccion.albumesPorGenero("Jazz"));
+          
+    }*/
     
 }
