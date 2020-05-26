@@ -44,7 +44,7 @@ public class VentanaArtista extends JFrame{
     public void accionVolver(){
         VentanaIncial vInicio = new VentanaIncial();
         this.setVisible(false);
-        vInicio.setVisible(true);
+        vInicio.setVisible(true);        
     }
     
 }

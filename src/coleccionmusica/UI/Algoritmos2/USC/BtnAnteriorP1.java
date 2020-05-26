@@ -2,11 +2,7 @@
 package coleccionmusica.UI.Algoritmos2.USC;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Label;
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import sun.util.locale.provider.AuxLocaleProviderAdapter;
