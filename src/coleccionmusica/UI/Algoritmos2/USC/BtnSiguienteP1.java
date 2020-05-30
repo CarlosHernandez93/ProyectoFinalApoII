@@ -14,31 +14,32 @@ public class BtnSiguienteP1 extends JPanel implements ActionListener{
     
     VentanaIncial miVentanaPadre;
     JButton botonSig;
-    
-    
+    final String COMMAND_SIGUIENTE="Siguiente";
+       
     public BtnSiguienteP1(VentanaIncial p)
     {
         
         /*separar espacios con JLabel vacios*/
         miVentanaPadre = p ;      
         
-        setLayout(new GridLayout(15,4));
+        setLayout(new GridLayout(7,1));
         
-        setPreferredSize(new Dimension(200, 300));
+        setPreferredSize(new Dimension(200, 450));
         
         this.setBackground(Color.white);
         
         botonSig = new JButton("Siguiente");
-        botonSig.setToolTipText("Click para Seguir");
+        botonSig.setToolTipText("Siguiente Artista");
+        botonSig.setActionCommand(COMMAND_SIGUIENTE);
+        botonSig.addActionListener(this);
         
-        add(new JLabel(" "));                
         add(new JLabel(" "));
         add(new JLabel(" "));
         add(new JLabel(" "));
-        add(new JLabel(" "));        
-        add(new JLabel(" "));       
-        add(new JLabel(" "));        
         add(botonSig);
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
         
     }
 
@@ -51,8 +52,14 @@ public class BtnSiguienteP1 extends JPanel implements ActionListener{
     }
     
     @Override
-    public void actionPerformed(ActionEvent ae) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e) {
+           
+        String comando = e.getActionCommand();
+        switch (comando){
+            case COMMAND_SIGUIENTE:
+                miVentanaPadre.accionSiguiente();
+                break;
+        }
     }
     
     

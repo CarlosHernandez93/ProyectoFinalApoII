@@ -61,6 +61,12 @@ public class VentanaAlbum extends JFrame{
         
     }
     
+    public void accionVolver(){
+        VentanaArtista vArtista = new VentanaArtista();
+        this.setVisible(false);
+        vArtista.setVisible(true);
+    }
+    
    
     
 }

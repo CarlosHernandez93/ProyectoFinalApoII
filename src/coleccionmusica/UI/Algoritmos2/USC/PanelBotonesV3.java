@@ -24,6 +24,9 @@ public class PanelBotonesV3 extends JPanel implements ActionListener{
     JButton guardar;
     JButton cancelar;
     JButton agregar;
+    JButton JBTsiguiente;
+    JButton JBTvolver;
+    final String COMMAND_VOLVER = "Volver";
     
     public PanelBotonesV3(VentanaAlbum p)
     {
@@ -39,17 +42,29 @@ public class PanelBotonesV3 extends JPanel implements ActionListener{
         
         agregar = new JButton("Agregar Cancion");
         
+        JBTsiguiente = new JButton("Sgiente Album");
+        
+        JBTvolver = new JButton("Volver");
+        JBTvolver.setToolTipText("Volver a la venta de Artista");
+        JBTvolver.setActionCommand(COMMAND_VOLVER);
+        JBTvolver.addActionListener(this);
+        
         add(guardar);
         add(cancelar);
         add(agregar);
         add(new JLabel(" "));
-        add(new JLabel(" "));
+        add(JBTvolver);
               
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e) {
+        String comando = e.getActionCommand();
+        switch (comando){
+            case COMMAND_VOLVER:
+                miVentantaAlbum.accionVolver();
+                break;
+        }
     }
     
 }

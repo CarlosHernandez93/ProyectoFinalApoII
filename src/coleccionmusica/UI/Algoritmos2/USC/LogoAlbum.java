@@ -11,12 +11,13 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author cpe
  */
-public class LogoAlbum extends JFrame{
+public class LogoAlbum extends JPanel{
     ImageIcon  imagenArtista;
     JLabel nombreAlbum;
     JLabel espacioAlbum;

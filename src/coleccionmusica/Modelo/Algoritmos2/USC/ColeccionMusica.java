@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ColeccionMusica.Modelo.Algoritmos2.USC;
 
 import java.io.*;
@@ -118,11 +114,11 @@ public class ColeccionMusica {
     /**
      * 
      * @param pGenero: Nombre del Género: Salsa, Rock, Jazz o Religiosa
-     * @return lista de artistas que pertenecen de ese género
+     * @return lista de albumes que pertenecen de ese género
      */
-    public ArrayList<Album> albumesPorGenero(String pGenero)
+    public ArrayList<Artista> albumesPorGenero(String pGenero)
     {
-        ArrayList<Album> Resultado = new ArrayList<Album>();
+        ArrayList<Artista> Resultado = new ArrayList<Artista>();
         /*
         Completar...
         */
@@ -214,8 +210,9 @@ public class ColeccionMusica {
                     String fechaNacArtista[] = datosArtista[2].trim().split("-"); //{"1943","07","26"}
                     String fechaDebutArtista[] = datosArtista[3].trim().split("-"); //{"1964","12","07"}
                     Fecha fechaNac = convertirFecha(fechaNacArtista);            
-                    Fecha fechaDebut = convertirFecha(fechaDebutArtista);            
-                    Artista nuevoArtista = new Artista(nombreArtista, activo, fechaNac, fechaDebut);
+                    Fecha fechaDebut = convertirFecha(fechaDebutArtista); 
+                    String imagen = datosArtista[4];
+                    Artista nuevoArtista = new Artista(nombreArtista, activo, fechaNac, fechaDebut, imagen);
                     artistas.add(nuevoArtista);
             }
             for (int i = 0; i < artistas.size(); i++) {
@@ -223,6 +220,7 @@ public class ColeccionMusica {
                 System.out.println(artistas.get(i).getEstaActivo());
                 System.out.println(artistas.get(i).getFechaNacimiento());
                 System.out.println(artistas.get(i).getFechaDebut());
+                System.out.println(artistas.get(i).getImagen());
                 System.out.println("");
             }
             
@@ -329,7 +327,6 @@ public class ColeccionMusica {
           System.out.println("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
           System.out.println(miColeccion.albumesPorArtista("cheo feliciano"));
           System.out.println(miColeccion.albumesPorGenero("Jazz"));
-          
     }*/
     
 }

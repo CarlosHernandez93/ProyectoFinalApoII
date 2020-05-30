@@ -17,7 +17,7 @@ public class Artista {
     private String nombre;
     private boolean estaActivo;
     private String rutaImagen;
-
+    
     public String getImagen() {
         return rutaImagen;
     }
@@ -37,12 +37,13 @@ public class Artista {
     public Artista(String nombre, 
                    boolean activo,
                    Fecha fechaNac,
-                   Fecha fechaDebut)
+                   Fecha fechaDebut, String rutaImagen)
     {
         this.nombre = nombre;
         this.estaActivo = activo;
         this.fechaNacimiento = fechaNac;
         this.fechaDebut = fechaDebut;
+        this.rutaImagen = rutaImagen;
         albumes = new ArrayList<Album>();
     }
     
@@ -52,6 +53,7 @@ public class Artista {
         this.estaActivo = false;
         this.fechaNacimiento = new Fecha();
         this.fechaDebut = new Fecha();
+        this.rutaImagen = "";
         albumes = new ArrayList<Album>();
     }
 

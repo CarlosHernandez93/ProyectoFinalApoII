@@ -10,12 +10,13 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author cpe
  */
-public class PanelLabelV3 extends JFrame {
+public class PanelLabelV3 extends JPanel {
     
     JLabel album, 
            genero, 
@@ -32,7 +33,7 @@ public class PanelLabelV3 extends JFrame {
         album = new JLabel("Nombre Album:");
         genero = new JLabel("Genero:");
         fechaLanzamiento = new JLabel("Fecha De Lanzamiento:");
-        canciones = new JLabel("Cnciones");
+        canciones = new JLabel("Canciones");
         
         add(new JLabel(" "));
         add(album);

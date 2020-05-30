@@ -15,6 +15,7 @@ public class BtnAnteriorP1 extends JPanel implements ActionListener{
     
     VentanaIncial miVentanaPadre;
     JButton botonAnt;
+    final String COMMNAD_ANTERIOR="Anterior";
     
     public BtnAnteriorP1(VentanaIncial p)
     {
@@ -22,25 +23,24 @@ public class BtnAnteriorP1 extends JPanel implements ActionListener{
         /*como hacer llamada en ventana padre ¿? */
         miVentanaPadre = p ;      
         
-        setLayout(new GridLayout(15,5));
+        setLayout(new GridLayout(7,1));
         
-        setPreferredSize(new Dimension(200, 300));
+        setPreferredSize(new Dimension(200, 450));
         
          this.setBackground(Color.white);
         
         botonAnt = new JButton("Anterior");
-        botonAnt.setToolTipText("Click para volver");
+        botonAnt.setToolTipText("Anterior Artista");
+        botonAnt.setActionCommand(COMMNAD_ANTERIOR);
+        botonAnt.addActionListener(this);
         
         add(new JLabel(" "));
         add(new JLabel(" "));
         add(new JLabel(" "));
-        add(new JLabel(" "));
-        add(new JLabel(" "));
-        add(new JLabel(" "));
-        add(new JLabel(" "));
-                
         add(botonAnt);
-        
+        add(new JLabel(" "));
+        add(new JLabel(" "));
+        add(new JLabel(" "));
     }
     
     public VentanaIncial getMiVentanaPadre() {
@@ -50,14 +50,16 @@ public class BtnAnteriorP1 extends JPanel implements ActionListener{
     public void setMiVentanaPadre(VentanaIncial miVentanaPadre) {
         this.miVentanaPadre = miVentanaPadre;
     }
-
-   
-
-    
-    
+  
     @Override
-    public void actionPerformed(ActionEvent ae) {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e) {
+        String comando = e.getActionCommand();
+        switch (comando){
+            case COMMNAD_ANTERIOR:
+                miVentanaPadre.accionAnterior();
+                break;
+        }
+     
     }
 
     

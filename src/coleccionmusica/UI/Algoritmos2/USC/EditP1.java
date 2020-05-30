@@ -31,12 +31,14 @@ public class EditP1 extends JPanel implements ActionListener{
         setLayout( new GridLayout(1,4,110,10));        
         setPreferredSize(new Dimension(45,45));
         this.setBackground(Color.white);
-        editar = new JButton("ver/editar");
+        editar = new JButton("ver/Editar");
         editar.setActionCommand(COMMAND_EDITAR);
         editar.addActionListener(this);
-        adic  = new JButton("adicionar");
+        editar.setToolTipText("Ver/Editar Artista");
+        adic  = new JButton("Adicionar");
         adic.setActionCommand(COMMAND_ADICIONAR);
         adic.addActionListener(this);
+        adic.setToolTipText("Adiconar Artista");
         add(new JLabel());
         add(editar);
         add(adic);

@@ -51,6 +51,7 @@ public class PanelBotonesV2 extends JPanel implements ActionListener{
             case COMMAND_VOLVER:
                 miVentantaArtista.accionVolver();
                 break;
+            
         }
     }
     
