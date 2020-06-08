@@ -116,19 +116,21 @@ public class ColeccionMusica {
      * @param pGenero: Nombre del Género: Salsa, Rock, Jazz o Religiosa
      * @return lista de albumes que pertenecen de ese género
      */
-    public ArrayList<Artista> albumesPorGenero(String pGenero)
+    public ArrayList<Album> albumesPorGenero(String pGenero)
     {
-        ArrayList<Artista> Resultado = new ArrayList<Artista>();
-        /*
-        Completar...
-        */
-        for (int i = 0; i < 10; i++) {
-           
+        ArrayList<Album> Resultado = new ArrayList<Album>();
+        for (int i = 0; i < artistas.size(); i++) {
+            Artista actual = artistas.get(i);
+            for (int j = 0; j < actual.getAlbumes().size(); j++) {
+                if(actual.getAlbumes().get(j).getGenero().equalsIgnoreCase(pGenero)){
+                    Resultado.add(actual.getAlbumes().get(j));
+                }
+            }
         }
         return Resultado;
     }
     
-    /** ----- completado
+    /** ----- completado ------
      * 
      * @param pArtista: Nombre del artista
      * @return lista de álbumes que pertenecen al artista
@@ -215,14 +217,6 @@ public class ColeccionMusica {
                     Artista nuevoArtista = new Artista(nombreArtista, activo, fechaNac, fechaDebut, imagen);
                     artistas.add(nuevoArtista);
             }
-            for (int i = 0; i < artistas.size(); i++) {
-                System.out.println(artistas.get(i).getNombre());
-                System.out.println(artistas.get(i).getEstaActivo());
-                System.out.println(artistas.get(i).getFechaNacimiento());
-                System.out.println(artistas.get(i).getFechaDebut());
-                System.out.println(artistas.get(i).getImagen());
-                System.out.println("");
-            }
             
             //Lectura de los primeros albumes del primer artista
             int numAlbum1 =  Integer.parseInt(br.readLine().trim());
@@ -241,8 +235,6 @@ public class ColeccionMusica {
                 artistas.get(0).agregarAlbum(nuevoAlbum1);
             }
             
-            System.out.println(artistas.get(0).numAlbumes());
-           
             //Lectura de los albumes para el segundo artista de la lista
             int numAlbum2 =  Integer.parseInt(br.readLine().trim());
 
@@ -259,9 +251,7 @@ public class ColeccionMusica {
                 Album nuevoAlbum2 = new Album(nombreAlbum2, generoAlbum2, numCopias2, rutaAlbum2, duracionAlmbun2, fechaPublic2);
                 artistas.get(1).agregarAlbum(nuevoAlbum2);
             }
-            
-            System.out.println(artistas.get(1).numAlbumes());
-            
+                        
             //Lectura de los albumes para el tercer artista de la lista
             int numAlbum3 =  Integer.parseInt(br.readLine().trim());
 
@@ -279,8 +269,6 @@ public class ColeccionMusica {
                 artistas.get(2).agregarAlbum(nuevoAlbum3);
             }
             
-            System.out.println(artistas.get(2).numAlbumes());
-           
             //Lectura de los albumes para el cuarto artista de la lista
             int numAlbum4 =  Integer.parseInt(br.readLine().trim());
 
@@ -298,8 +286,6 @@ public class ColeccionMusica {
                 artistas.get(3).agregarAlbum(nuevoAlbum4);
             }
             
-            System.out.println(artistas.get(3).numAlbumes());
-          
             br.close();
             
         } catch (FileNotFoundException ex) {
@@ -320,13 +306,13 @@ public class ColeccionMusica {
     /**
      * @param args the command line arguments
      */
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
           //TODO code application logic here
           ColeccionMusica miColeccion = new ColeccionMusica();         
           miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
           System.out.println("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
           System.out.println(miColeccion.albumesPorArtista("cheo feliciano"));
           System.out.println(miColeccion.albumesPorGenero("Jazz"));
-    }*/
+    }
     
 }

@@ -18,8 +18,8 @@ public class PanelBotonesV2 extends JPanel implements ActionListener{
     VentanaArtista miVentantaArtista;
     JButton JBTguardar;
     JButton JBTvolver;
-    JButton JBTcancelar;
     final String COMMAND_VOLVER="Volver";
+    final String COMMAND_ACTUALIZAR="Actualizar";
     
     public PanelBotonesV2(VentanaArtista p){
         miVentantaArtista=p;
@@ -30,15 +30,15 @@ public class PanelBotonesV2 extends JPanel implements ActionListener{
         
         JBTguardar = new JButton("Guardar");
         JBTguardar.setToolTipText("Click para guardar");
-        JBTcancelar = new JButton("Cancelar");
-        JBTcancelar.setToolTipText("Click para cancelar");
+        JBTguardar.setActionCommand(COMMAND_ACTUALIZAR);
+        JBTguardar.addActionListener(this);
         JBTvolver = new JButton("Volver");
         JBTvolver.setToolTipText("Click para voler");
         JBTvolver.setActionCommand(COMMAND_VOLVER);
         JBTvolver.addActionListener(this);
         
         add(JBTguardar);
-        add(JBTcancelar);
+        add(new JLabel(" "));
         add(new JLabel(" "));
         add(new JLabel(" "));
         add(JBTvolver);
@@ -51,7 +51,10 @@ public class PanelBotonesV2 extends JPanel implements ActionListener{
             case COMMAND_VOLVER:
                 miVentantaArtista.accionVolver();
                 break;
-            
+                
+            case COMMAND_ACTUALIZAR:
+                miVentantaArtista.accionActualizar();
+                break;
         }
     }
     

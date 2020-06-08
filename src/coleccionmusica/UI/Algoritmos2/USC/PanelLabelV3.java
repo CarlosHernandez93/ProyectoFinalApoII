@@ -35,7 +35,6 @@ public class PanelLabelV3 extends JPanel {
         fechaLanzamiento = new JLabel("Fecha De Lanzamiento:");
         canciones = new JLabel("Canciones");
         
-        add(new JLabel(" "));
         add(album);
         add(genero);
         add(fechaLanzamiento);

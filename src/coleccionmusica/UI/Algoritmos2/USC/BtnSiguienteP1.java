@@ -16,11 +16,11 @@ public class BtnSiguienteP1 extends JPanel implements ActionListener{
     JButton botonSig;
     final String COMMAND_SIGUIENTE="Siguiente";
        
-    public BtnSiguienteP1(VentanaIncial p)
+    public BtnSiguienteP1(VentanaIncial e)
     {
         
         /*separar espacios con JLabel vacios*/
-        miVentanaPadre = p ;      
+        miVentanaPadre = e;      
         
         setLayout(new GridLayout(7,1));
         
@@ -42,15 +42,6 @@ public class BtnSiguienteP1 extends JPanel implements ActionListener{
         add(new JLabel(" "));
         
     }
-
-    public VentanaIncial getMiVentanaPadre() {
-        return miVentanaPadre;
-    }
-
-    public void setMiVentanaPadre(VentanaIncial miVentanaPadre) {
-        this.miVentanaPadre = miVentanaPadre;
-    }
-    
     @Override
     public void actionPerformed(ActionEvent e) {
            

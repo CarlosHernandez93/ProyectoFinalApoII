@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ public class PanelInformacionV2 extends JPanel implements ActionListener{
     JTextField JTFfechaDeb;
     JCheckBox checkActividad;
     JButton JBTaddAlbum;
+    
     final String COMMAND_AÑADIR="Añadir";
     
     public PanelInformacionV2(VentanaArtista p){
@@ -52,10 +54,22 @@ public class PanelInformacionV2 extends JPanel implements ActionListener{
         add(JBTaddAlbum);
         add(new JLabel(" "));
         
-        JTFnombre.setText(miVentanaArtista.CargaNombreV2());
-        
     }
 
+    public void CargarNombreV2(String nombre){
+        this.JTFnombre.setText(nombre);
+    }
+    
+    public void CargarEstadoV2(boolean estado){
+        this.checkActividad.setSelected(estado);
+    }
+    public void CargarFechaNacV2(String fechaNac){
+        this.JTFfechaNac.setText(fechaNac);
+    }
+    public void CargarFechaDebV2(String fechaDeb){
+        this.JTFfechaDeb.setText(fechaDeb);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         String comando = e.getActionCommand();

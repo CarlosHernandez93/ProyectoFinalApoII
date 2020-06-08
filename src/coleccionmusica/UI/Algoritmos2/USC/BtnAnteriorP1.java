@@ -43,14 +43,6 @@ public class BtnAnteriorP1 extends JPanel implements ActionListener{
         add(new JLabel(" "));
     }
     
-    public VentanaIncial getMiVentanaPadre() {
-        return miVentanaPadre;
-    }
-    
-    public void setMiVentanaPadre(VentanaIncial miVentanaPadre) {
-        this.miVentanaPadre = miVentanaPadre;
-    }
-  
     @Override
     public void actionPerformed(ActionEvent e) {
         String comando = e.getActionCommand();

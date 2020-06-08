@@ -10,21 +10,24 @@ import javax.swing.*;
  */
 public class PanelArtistaV2 extends JPanel{
     ImageIcon  imagenArtista;
-    JLabel JLnombreArt;
     JLabel imgArtista;
-   
     
     public PanelArtistaV2(){
         this.setPreferredSize(new Dimension(350,115));
         this.setLayout(new BorderLayout());
         this.setBackground(Color.white);
         
-        JLnombreArt = new JLabel("Nombre");
         imgArtista = new JLabel();
-        imagenArtista = new ImageIcon("./Datos/Imagenes/IconoColeccion2.jpg");
+        imagenArtista = new ImageIcon();
         imgArtista.setIcon(imagenArtista); 
-        add(JLnombreArt,BorderLayout.NORTH);
+        add(new JLabel(" "),BorderLayout.NORTH);
         add(imgArtista,BorderLayout.CENTER);
+        add(new JLabel(" "),BorderLayout.SOUTH);
+    }
+    
+    public void CargarImagenV2(String rutaimagen){
+        imagenArtista = new ImageIcon(rutaimagen);
+        this.imgArtista.setIcon(imagenArtista);
     }
     
     /*@Override

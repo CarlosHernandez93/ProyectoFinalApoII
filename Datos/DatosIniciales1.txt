@@ -5,7 +5,7 @@ Janis Joplin,false,1943-01-19,1966-07-04,./Datos/Imagenes/JanisJoplin.jpg
 Marcos Witt,true,1962-05-19,1986-01-01,./Datos/Imagenes/MarcosWitt.png
 Keith Jarret, true ,1945-05-08,1968-04-01,./Datos/Imagenes/KeithJarrett.jpg
 1
-Mi tierra y yo,Salsa,100000,./Datos/Imagenes/CheoFeliciano1.jpg,43,1976-12-31
+Mi tierra y yo,Salsa,100000,./Datos/Imagenes/CheoFeliciano1.jpeg,43,1976-12-31
 3
 Pearl,Rock,200000,./Datos/Imagenes/JanisJoplin1.jpg,34,1971-01-11
 In Concert,Rock,900000,./Datos/Imagenes/JanisJoplin2.jpg,76,1972-04-1

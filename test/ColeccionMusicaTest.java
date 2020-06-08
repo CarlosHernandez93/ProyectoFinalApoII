@@ -35,7 +35,16 @@ public class ColeccionMusicaTest extends TestCase{
         miColeccion = new ColeccionMusica("Carlos Bejarano", new Fecha(27, 05, 2020));
         miColeccion.agregarArtista(new Artista("Alguien", true, new Fecha(01, 01,2020), new Fecha(27, 05, 2020),""));
     }
+    public void Escenario4()
+    {
+        miColeccion = new ColeccionMusica();
+    }
     
+    public void Escenario5()
+    {
+        miColeccion = new ColeccionMusica();
+        miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
+    }
     @Test
     public void testCargaDatos(){
         //Primer paso
@@ -84,5 +93,35 @@ public class ColeccionMusicaTest extends TestCase{
         //Cuarto paso
         assertEquals(miColeccion.getArtistas().size(), 0);
         assertTrue(miColeccion.getArtistas().size() == 0);
+    }
+   
+    //-----------AGREGADO--------------
+    @Test
+    public void testArtistasMasAlbumes()
+    {
+        Escenario4();
+        miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
+        
+        miColeccion.artistaMasAlbumes();
+        
+        assertNotNull(miColeccion.getArtistas());
+        assertEquals(miColeccion.getArtistas().size(), 4);
+        assertEquals(miColeccion.artistaMasAlbumes(), "Marcos Witt");
+    }
+    
+    
+    @Test
+    public void testAlbunesPorGenero()
+   {
+       Escenario5();
+       
+        String pGenero = "Espiritual";       
+       
+       miColeccion.albumesPorGenero(pGenero);
+       
+       assertNotNull(miColeccion.albumesPorGenero(pGenero));
+       
+       assertEquals(miColeccion.albumesPorGenero(pGenero).size(), 4);
+       
     }
 }

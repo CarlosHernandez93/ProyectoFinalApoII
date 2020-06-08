@@ -15,31 +15,30 @@ import javax.swing.JPanel;
  * @author Juan Sebastian Bejarano y Carlos Augusto Hernandez
  */
 public class LogoArtista extends JPanel {
-    VentanaIncial miVentanaInical;
     JLabel nombreArtista;
     JLabel artista;
     ImageIcon imagenArtista;
     
-    public LogoArtista(VentanaIncial p)
+    public LogoArtista()
     {
-        miVentanaInical = p;
         this.setLayout(new BorderLayout());
         this.setBackground(Color.white);
-        nombreArtista = new JLabel(miVentanaInical.CargaInicialNombre());
+        
+        nombreArtista = new JLabel("Hola sebastian");
         artista = new JLabel();
-        imagenArtista = new ImageIcon(miVentanaInical.CargaInicialImagen());
+        imagenArtista = new ImageIcon();
         artista.setIcon(imagenArtista);
         
         add(nombreArtista, BorderLayout.NORTH);
         add(artista, BorderLayout.CENTER);
     }
     
-    public void CambiarNombre(String informacion){
-       nombreArtista.setText(informacion);
+    public void CambiarNombre(String informacion1){
+        this.nombreArtista.setText(informacion1);
     }
  
-    public void CambiarImagen(String informacion){
-        imagenArtista = new ImageIcon(informacion);
-        artista.setIcon(imagenArtista);
+    public void CambiarImagen(String informacion2){
+        this.imagenArtista = new ImageIcon(informacion2);
+        this.artista.setIcon(imagenArtista);
     }
 }

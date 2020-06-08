@@ -12,6 +12,7 @@ import javax.swing.JPanel;
  */
 public class PanelLogoV2 extends JPanel{
     ImageIcon logoColeccion;
+    
     public  PanelLogoV2(){
         this.setPreferredSize(new Dimension(900, 80));
     }

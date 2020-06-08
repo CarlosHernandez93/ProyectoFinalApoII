@@ -1,4 +1,4 @@
-
+    
 package coleccionmusica.UI.Algoritmos2.USC;
 
 import java.awt.Color;
@@ -19,16 +19,18 @@ public class EditP1 extends JPanel implements ActionListener{
     VentanaIncial miVentanaPadre;
     JButton editar;
     JButton adic;
+    JButton JBTreporte;
 
     final String COMMAND_EDITAR="Editar";
     final String COMMAND_ADICIONAR="Adicionar";
+    final String COMMAND_REPORTE="Reporte";
     
     public EditP1(VentanaIncial p) {
         
         miVentanaPadre = p;
         /*añadir espacios */
          
-        setLayout( new GridLayout(1,4,110,10));        
+        setLayout( new GridLayout(1,5,110,10));        
         setPreferredSize(new Dimension(45,45));
         this.setBackground(Color.white);
         editar = new JButton("ver/Editar");
@@ -39,9 +41,14 @@ public class EditP1 extends JPanel implements ActionListener{
         adic.setActionCommand(COMMAND_ADICIONAR);
         adic.addActionListener(this);
         adic.setToolTipText("Adiconar Artista");
+        JBTreporte  = new JButton("Reporte");
+        JBTreporte.setActionCommand(COMMAND_REPORTE);
+        JBTreporte.addActionListener(this);
+        JBTreporte.setToolTipText("Generar Reporte");
         add(new JLabel());
         add(editar);
         add(adic);
+        add(JBTreporte);
         add(new JLabel(" "));
         
     }
@@ -55,6 +62,9 @@ public class EditP1 extends JPanel implements ActionListener{
                 break;
             case COMMAND_ADICIONAR:
                 miVentanaPadre.accionAdicionar();
+                break;
+            case COMMAND_REPORTE:
+                miVentanaPadre.accionGenerarReporte();
                 break;
         }
     }

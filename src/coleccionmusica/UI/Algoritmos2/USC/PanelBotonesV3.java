@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package coleccionmusica.UI.Algoritmos2.USC;
 
 import java.awt.Color;
@@ -22,11 +18,14 @@ public class PanelBotonesV3 extends JPanel implements ActionListener{
     
     VentanaAlbum miVentantaAlbum;
     JButton guardar;
-    JButton cancelar;
     JButton agregar;
-    JButton JBTsiguiente;
+    JButton agregarAlbum;
     JButton JBTvolver;
+    
     final String COMMAND_VOLVER = "Volver";
+    final String COMMAND_AGREGARCANCION = "AgregarCancion";
+    final String COMMAND_AGREGARALBUM = "AgregarAlbum";
+    final String COMMAND_ACTUALIZAR = "Actualizar";
     
     public PanelBotonesV3(VentanaAlbum p)
     {
@@ -34,25 +33,31 @@ public class PanelBotonesV3 extends JPanel implements ActionListener{
         
         this.setBackground(Color.white);
         this.setPreferredSize(new Dimension(900,35));
-        this.setLayout(new GridLayout(1,5,50,0));
+        this.setLayout(new GridLayout(1,4,50,0));
         
         guardar = new JButton("Guardar");
+        guardar.setToolTipText("Guardar los datos");
+        guardar.setActionCommand(COMMAND_ACTUALIZAR);
+        guardar.addActionListener(this);
         
-        cancelar = new JButton("Cancelar");
+        agregarAlbum = new JButton("Agregar Album");
+        agregarAlbum.setToolTipText("Agregar nuevo album");
+        agregarAlbum.setActionCommand(COMMAND_AGREGARALBUM);
+        agregarAlbum.addActionListener(this);
         
         agregar = new JButton("Agregar Cancion");
-        
-        JBTsiguiente = new JButton("Sgiente Album");
-        
+        agregar.setToolTipText("Agregar nuevo artista");
+        agregar.setActionCommand(COMMAND_AGREGARCANCION);
+        agregar.addActionListener(this);
+            
         JBTvolver = new JButton("Volver");
         JBTvolver.setToolTipText("Volver a la venta de Artista");
         JBTvolver.setActionCommand(COMMAND_VOLVER);
         JBTvolver.addActionListener(this);
-        
+           
         add(guardar);
-        add(cancelar);
         add(agregar);
-        add(new JLabel(" "));
+        add(agregarAlbum);
         add(JBTvolver);
               
     }
@@ -63,6 +68,18 @@ public class PanelBotonesV3 extends JPanel implements ActionListener{
         switch (comando){
             case COMMAND_VOLVER:
                 miVentantaAlbum.accionVolver();
+                break;
+                
+            case COMMAND_AGREGARCANCION:
+                miVentantaAlbum.accionAgregar();
+                break;
+                
+            case COMMAND_AGREGARALBUM:
+                miVentantaAlbum.accionAgregarAlbum1();
+                break;
+            
+            case COMMAND_ACTUALIZAR:
+                miVentantaAlbum.accionActualizar();
                 break;
         }
     }
