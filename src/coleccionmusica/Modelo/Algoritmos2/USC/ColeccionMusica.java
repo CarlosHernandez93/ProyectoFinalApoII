@@ -306,13 +306,13 @@ public class ColeccionMusica {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-          //TODO code application logic here
-          ColeccionMusica miColeccion = new ColeccionMusica();         
-          miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
-          System.out.println("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
-          System.out.println(miColeccion.albumesPorArtista("cheo feliciano"));
-          System.out.println(miColeccion.albumesPorGenero("Jazz"));
-    }
+//    public static void main(String[] args) {
+//          //TODO code application logic here
+//          ColeccionMusica miColeccion = new ColeccionMusica();         
+//          miColeccion.CargarInformacion("./Datos/DatosIniciales1.txt");
+//          System.out.println("El artista con más álbumes es: "+miColeccion.artistaMasAlbumes());
+//          System.out.println(miColeccion.albumesPorArtista("cheo feliciano"));
+//          System.out.println(miColeccion.albumesPorGenero("Jazz"));
+//    }
     
 }
